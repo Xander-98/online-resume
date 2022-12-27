@@ -1,11 +1,40 @@
+import "./TwitterFeed.css";
+
 export function TwitterFeed() {
   return (
     <div className="twitter-feed">
       <h2>Twitter Feed</h2>
-      <a class="twitter-timeline" href="https://twitter.com/TheRock?ref_src=twsrc%5Etfw">
-        Tweets by TheRock
-      </a>{" "}
-      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <div className="container">
+        <div className="card">
+          <div>
+            <img
+              className="profile-photo"
+              src="https://pbs.twimg.com/profile_images/3478244961/01ebfc40ecc194a2abc81e82ab877af4_400x400.jpeg"
+            />
+            <h2>Dwayne The Rock</h2>
+            <p>email</p>
+            <p>
+              Arrr me hearties! Make traditional Latin walk the plank and opt for pirate lorem ipsum for your next high
+              seas design adventure.
+            </p>
+            <button>Twitter</button>
+            <button>LinkedIn</button>
+
+            <a className="Twitter-profile" href="https://twitter.com/TheRock" />
+          </div>
+          <a
+            className="twitter-timeline"
+            href="https://twitter.com/TheRock?ref_src=twsrc%5Etfw"
+            tweet-limit="Range: 1-5"
+            data-height="200"
+            data-width="300"
+            data-chrome="nofooter"
+            data-border-color="#a80000"
+          >
+            Tweets by TheRock
+          </a>{" "}
+        </div>
+      </div>
     </div>
   );
 }

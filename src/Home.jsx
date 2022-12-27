@@ -1,4 +1,5 @@
 import { ResumesIndex } from "./ResumesIndex";
+import { TwitterFeed } from "./TwitterFeed";
 
 export function Home() {
   const students = [
@@ -33,6 +34,7 @@ export function Home() {
   return (
     <div>
       <ResumesIndex students={students} />
+      <TwitterFeed />
     </div>
   );
 }
