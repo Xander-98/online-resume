@@ -3,20 +3,30 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-items: center;
-  column-gap: 24px;
+  column-gap: 0px;
   row-gap: 24px;
   max-width: 948px;
   margin: 0 auto;
 }
 
 .card {
-  height: 550px;
+  height: 510px;
   width: 250px;
   border: 3px solid;
+  border-radius: 10px;
 }
 
-button {
-  font-size: 10px;
+.but-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+div .but-container button {
+  margin: 2px;
+  font-size: 11px;
+  padding: 5px;
 }
 
 .profile-photo {
@@ -24,5 +34,6 @@ button {
   height: 100px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 3px;
   display: block;
 }
