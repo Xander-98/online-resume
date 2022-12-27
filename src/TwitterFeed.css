@@ -42,6 +42,7 @@ p {
 
 .profile-photo {
   border-radius: 50%;
+  border: 2px solid whitesmoke;
   height: 100px;
   margin-left: auto;
   margin-right: auto;
