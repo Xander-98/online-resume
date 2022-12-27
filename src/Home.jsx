@@ -29,10 +29,10 @@ export function Home() {
       photo: "test",
     },
   ];
-}
 
-return (
-  <div>
-    <ResumesIndex students={students} />
-  </div>
-);
+  return (
+    <div>
+      <ResumesIndex students={students} />
+    </div>
+  );
+}
