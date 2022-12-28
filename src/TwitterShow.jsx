@@ -10,9 +10,9 @@ export function TwitterShow(props) {
             key={student.id}
             first_name={student.first_name}
             last_name={student.last_name}
-            bio={student.bio}
-            photo={student.photo}
-            twitter={student.twitter}
+            short_bio={student.short_bio}
+            photo_url={student.photo_url}
+            twitter_handle={student.twitter_handle}
           />
         ))}
       </div>

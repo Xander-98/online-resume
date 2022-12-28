@@ -3,7 +3,6 @@ import axios from "axios";
 import { ResumesIndex } from "./ResumesIndex";
 import { Modal } from "./Modal";
 import { ResumesShow } from "./ResumesShow";
-import { TwitterFeed } from "./TwitterFeed";
 import { TwitterShow } from "./TwitterShow";
 
 export function Home() {
@@ -29,7 +28,7 @@ export function Home() {
   return (
     <div>
       <ResumesIndex students={students} />
-      <TwitterFeed />
+      <TwitterShow students={students} />
     </div>
   );
 }

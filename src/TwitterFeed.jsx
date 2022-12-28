@@ -6,12 +6,12 @@ export function TwitterFeed(props) {
     <div className="twitter-feed">
       <div className="card">
         <div key={props.id}></div>
-        <img src={props.photo} className="profile-photo"></img>
+        <img src={props.photo_url} className="profile-photo"></img>
         <h3>
           {props.first_name} {props.last_name}
         </h3>
         <div className="bio">
-          <p>{props.bio}</p>
+          <p>{props.short_bio}</p>
         </div>
         <div className="twitter-container">
           <div className="but-container">
@@ -23,7 +23,7 @@ export function TwitterFeed(props) {
           <div className="tweetfeed">
             <a
               className="twitter-timeline"
-              href={props.twitter}
+              href={props.twitter_handle}
               tweet-limit="Range: 1-5"
               data-height="200"
               data-width="300"
