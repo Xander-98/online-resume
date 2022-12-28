@@ -4,6 +4,7 @@ import { ResumesIndex } from "./ResumesIndex";
 import { Modal } from "./Modal";
 import { ResumesShow } from "./ResumesShow";
 import { TwitterFeed } from "./TwitterFeed";
+import { TwitterShow } from "./TwitterShow";
 
 export function Home() {
   const [students, setStudents] = useState([]);
@@ -27,10 +28,7 @@ export function Home() {
   useEffect(handleIndexStudents, []);
   return (
     <div>
-      <ResumesIndex students={students} onSelectStudent={handleShowStudent} />
-      <Modal show={isStudentsShowVisible} onClose={handleHideStudent}>
-        <ResumesShow student={currentStudent} />
-      </Modal>
+      <ResumesIndex students={students} />
       <TwitterFeed />
     </div>
   );
