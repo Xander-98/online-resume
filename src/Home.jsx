@@ -1,39 +1,36 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { ResumesIndex } from "./ResumesIndex";
+import { Modal } from "./Modal";
+import { ResumesShow } from "./ResumesShow";
 import { TwitterFeed } from "./TwitterFeed";
 
 export function Home() {
-  const students = [
-    {
-      id: 1,
-      first_name: "Tester",
-      last_name: "Tom",
-      email: "testemail@tester.com",
-      phone_number: "911",
-      bio: "a short test bio to test the bio",
-      linkedin: "linked",
-      twitter: "tweeter",
-      personal_website: "personal test",
-      github: "http:github.com",
-      photo: "test.image",
-    },
-    {
-      id: 2,
-      first_name: "Tested",
-      last_name: "Tim",
-      email: "test@testemail.com",
-      phone_number: "119",
-      bio: "a short test bio to test the bio whilst the bio is tested",
-      linkedin: "linked",
-      twitter: "tweetr",
-      personal_website: "personal",
-      github: "github",
-      photo: "test",
-    },
-  ];
+  const [students, setStudents] = useState([]);
+  const [isStudentsShowVisible, setIsStudentsShowVisible] = useState(false);
+  const [currentStudent, setCurrentStudent] = useState({});
 
+  const handleIndexStudents = () => {
+    axios.get("http://localhost:3000/students.json").then((response) => {
+      console.log(response.data);
+      setStudents(response.data);
+    });
+  };
+
+  const handleShowStudent = (student) => {
+    setIsStudentsShowVisible(true);
+    setCurrentStudent(student);
+  };
+  const handleHideStudent = () => {
+    setIsStudentsShowVisible(false);
+  };
+  useEffect(handleIndexStudents, []);
   return (
     <div>
-      <ResumesIndex students={students} />
+      <ResumesIndex students={students} onSelectStudent={handleShowStudent} />
+      <Modal show={isStudentsShowVisible} onClose={handleHideStudent}>
+        <ResumesShow student={currentStudent} />
+      </Modal>
       <TwitterFeed />
     </div>
   );

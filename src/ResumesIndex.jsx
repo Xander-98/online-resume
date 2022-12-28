@@ -5,8 +5,10 @@ export function ResumesIndex(props) {
       {props.students.map((student) => (
         <div key={student.id}>
           <h2>{student.first_name}</h2>
-          <img src={student.photo} />
-          <p>Bio: {student.bio}</p>
+          <img src={student.photo_url} />
+          <button type="button" className="btn btn-primary" onClick={() => props.onSelectStudent(student)}>
+            More Info
+          </button>
         </div>
       ))}
     </div>
