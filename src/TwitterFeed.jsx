@@ -20,17 +20,21 @@ export function TwitterFeed(props) {
             <button>Email</button>
           </div>
 
-          <div className="tweetfeed">
-            <a
-              className="twitter-timeline"
-              href={props.twitter_handle}
-              tweet-limit="Range: 1-5"
-              data-height="200"
-              data-width="300"
-              data-chrome="nofooter"
-              data-border-color="#a80000"
-            ></a>
-          </div>
+          {props.twitter_handle ? (
+            <div className="tweetfeed">
+              <a
+                className="twitter-timeline"
+                href={props.twitter_handle}
+                tweet-limit="Range: 1-5"
+                data-height="200"
+                data-width="300"
+                data-chrome="nofooter"
+                data-border-color="#a80000"
+              ></a>
+            </div>
+          ) : (
+            <p>No Twitter Feed</p>
+          )}
         </div>
       </div>
     </div>
